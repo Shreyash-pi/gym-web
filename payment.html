@@ -1,230 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Font Awesome CDN-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <title>Payment</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <title>Payment</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      font-family: sans-serif;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+
+    .tegline {
+      text-align: center;
+      color: brown;
+      margin-bottom: 30px;
+    }
+
+    .tegline h2 {
+      color: blueviolet;
+      font-size: 24px;
+    }
+
+    .container {
+      background-color: beige;
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+      padding: 30px 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .title h1 {
+      font-size: 20px;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .category {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 15px;
+    }
+
+    .category label {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      cursor: pointer;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .category label:hover {
+      box-shadow: 0 0 0 2px #6064b6;
+    }
+
+    .imgContainer img {
+      width: 70px;
+      height: auto;
+    }
+
+    .name {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    footer {
+      margin-top: 30px;
+      color: blue;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    @media (max-width: 500px) {
+      .tegline h2 {
+        font-size: 20px;
+      }
+
+      .tegline h1 {
+        font-size: 18px;
+      }
+
+      .category label {
+        padding: 10px;
+      }
+
+      .imgContainer img {
+        width: 60px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <style>
+  <div class="tegline">
+    <h2>Month - 1200/- INR <br />3 Months - 3000/- INR</h2>
+    <br />
+    <h1>Offer For You :) <br /><br />Take 3 Months Membership &<br /> Get 600/- INR Discount</h1>
+  </div>
 
-*{
-    margin:  0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
-.container{
-    background-color: beige;
-    width: 400px;
-    border-radius: 8px;
-    padding: 40px;
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1),
-                0 5px 12px -2px rgba(0, 0, 0, 
-    0.1),
-                0 18px 36px -6px rgba(0, 0, 0, 
-    0.1);
-}
-
-.container .title{
-    font-size: 20px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
-.container form input{
-    display: none;
-}
-
-.container form .category{
-    margin-top: 10px;
-    padding-top: 20px;
-
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 15px;
-}  
-
-.category label{
-    height: 145px;
-    padding: 20px;
-    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    border-radius: 5px;
-    position: relative;
-}
-
-#visa:checked ~ .category .visaMethod,
-#mastercard:checked ~ .category .mastercardMethod,
-#paypal:checked ~ .category .paypalMethod,{
-    box-shadow: 0px 0px 0px 1px #6064b6;
-}
-
-#visa:checked ~ .category .visaMethod .check,
-#mastercard:checked ~ .category .mastercardMethod .check,
-#paypal:checked ~ .category .paypalMethod .check{
-    display: block;
-}
-
-
-
-label .imgName{
-    background-color: aquamarine;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.imgName span{  
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-    position: absolute;
-    top: 72%;
-    transform: translate(-72%);
-}
-
-.imgName  .imgcontainer{
-    background-color: crimson;
-    width: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    position: absolute;
-    top: 35px;
-    transform: translate(-35%);
-}
-
-img{
-    width: 50px;
-    height: auto;
-}
-
-.UPI img{
-    width: 100px;
-}
-
-.visa img{
-    width: 100px;
-}
-
-.mastercard img{
-    width: 100px;
-}
-
-.paypal img{
-    width: 100px;
-}
-
-.check{
-    display: none;
-    position: absolute;
-    top: -4px;
-    right: -4px;
-}
-
-.check i{
-    font-size: 18px;
-}
-
-footer{
-    color: blue;
-    font-size: 30px;
-    text-align: center;
-    position: absolute;
-    right: 70px;
-}
-
-.tegline{
-    color: brown;
-    position: absolute;
-    left: 30px;
-}
-
-h2{
-    color: blueviolet;
-    font-size: 30px;
-}
-
-    </style>
-
-    <DIV class="tegline">
-        <h2>Month - 1200/- INR <br> 3 Months - 3000/- INR</h2><br><br><br>
-        <h1>Offer For You :) <br><br>If You Take 3 Months <br> Members You'll Get 600/- <br>INR Discount </h1>
-    </DIV>
-
-
-    <div class="container">
-        <div class="title">
-            <h1>select a<span style="color: #6064b6;">Payment</span>Method</h1>
-        </div>
-        <form action="#">
-            <input type="button" name="Payment" id="UPI">
-            <input type="button" name="Payment" id="Visa">
-            <input type="button" name="Payment" id="Mastercard">
-            <input type="button" name="Payment" id="Paypal">
-
-            <div class="category">
-                <label for="UPI">
-                    <div class="imgName">
-                        <div class="imgContainer">
-                            <img src="upi00.png" alt="#">
-                        </div>
-                        <span class="name">UPI</span>
-                    </div>
-                    <span><i class="fa-solid fa-circle-check"></i>
-                    </span>
-                </label>
-                <label for="Visa">
-                    <div class="imgName">
-                        <div class="imgContainer">
-                            <img src="VISA0.png" alt="#">
-                        </div>
-                        <span class="name">Visa</span>
-                    </div>
-                    <span><i class="fa-solid fa-circle-check"></i>
-                    </span>
-                </label>
-                <label for="Mastercard">
-                    <div class="imgName">
-                        <div class="imgContainer">
-                            <img src="mastercard002.png" alt="#">
-                        </div>
-                        <span class="name">Mastercard</span>
-                    </div>
-                    <span><i class="fa-solid fa-circle-check"></i>
-                    </span>
-                </label>
-                <label for="Paypal">
-                    <div class="imgName">
-                        <div class="imgContainer">
-                            <img src="PAYPAL0.png" alt="#">
-                        </div>
-                        <span class="name">Paypal</span>
-                    </div>
-                    <span><i class="fa-solid fa-circle-check"></i>
-                    </span>
-                </label>
-            </div>
-        </form>
+  <div class="container">
+    <div class="title">
+      <h1>Select a <span style="color: #6064b6;">Payment</span> Method</h1>
     </div>
 
-    <footer>SK Fitness World</footer>
+    <form action="#">
+      <input type="radio" name="payment" id="upi" hidden />
+      <input type="radio" name="payment" id="visa" hidden />
+      <input type="radio" name="payment" id="mastercard" hidden />
+      <input type="radio" name="payment" id="paypal" hidden />
 
+      <div class="category">
+        <label for="upi">
+          <div class="imgContainer">
+            <img src="upi00.png" alt="UPI" />
+          </div>
+          <div class="name">UPI</div>
+        </label>
+
+        <label for="visa">
+          <div class="imgContainer">
+            <img src="VISA0.png" alt="Visa" />
+          </div>
+          <div class="name">Visa</div>
+        </label>
+
+        <label for="mastercard">
+          <div class="imgContainer">
+            <img src="mastercard002.png" alt="Mastercard" />
+          </div>
+          <div class="name">Mastercard</div>
+        </label>
+
+        <label for="paypal">
+          <div class="imgContainer">
+            <img src="PAYPAL0.png" alt="Paypal" />
+          </div>
+          <div class="name">Paypal</div>
+        </label>
+      </div>
+    </form>
+  </div>
+
+  <footer>SK Fitness World</footer>
 </body>
 </html>
