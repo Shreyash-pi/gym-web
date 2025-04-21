@@ -1,126 +1,193 @@
-<!DOCTYPE html><html lang="en"><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SK Fitness - Gym Website</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: url('https://images.unsplash.com/photo-1583454110551-21d907e60d42') no-repeat center center fixed;
-            background-size: cover;
-            font-family: Arial, sans-serif;
-            color: white;
-        }.container {
-        text-align: center;
-        padding-top: 100px;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MY Fitness</title>
+  <meta name="description" content="Hello This is a Gym Website that contents our details about the gym">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url(wp3173151.jpg) no-repeat center center/cover;
+      font-family: Arial, sans-serif;
     }
 
-    h1 {
-        color: #00FF00;
-        font-size: 32px;
-        margin-bottom: 30px;
+    .left, .right, .mid {
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .form-group {
-        margin: 10px auto;
-        max-width: 300px;
+    .left {
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      flex-direction: column;
+      text-align: center;
     }
 
-    input {
-        width: 100%;
-        padding: 10px;
-        border: none;
-        border-radius: 5px;
-        font-size: 16px;
+    .left img {
+      width: 80px;
+      filter: invert(100%);
     }
 
-    .btn {
-        margin-top: 20px;
-        padding: 10px 20px;
-        font-size: 16px;
-        background-color: black;
-        color: white;
-        border: 2px solid white;
-        border-radius: 5px;
-        cursor: pointer;
+    .name {
+      color: chartreuse;
+      font-weight: bold;
     }
 
-    .btn:hover {
-        background-color: white;
-        color: black;
+    .mid {
+      justify-content: center;
+      margin-top: 10px;
     }
 
-    nav {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
-        padding: 10px;
-        display: flex;
+    .navbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .navbar li {
+      margin: 5px 10px;
+    }
+
+    .navbar li a {
+      color: aliceblue;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .navbar li a:hover {
+      text-decoration: underline;
+      color: cornflowerblue;
+    }
+
+    .right {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      gap: 10px;
+    }
+
+    .btn, .right button {
+      background-color: black;
+      color: white;
+      border: 2px solid gray;
+      border-radius: 10px;
+      padding: 6px 12px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .btn:hover, .right button:hover {
+      background-color: rgb(189, 51, 51);
+    }
+
+    .container {
+      background-color: rgba(0, 0, 0, 0.7);
+      margin: 120px auto;
+      padding: 20px;
+      width: 90%;
+      max-width: 500px;
+      border-radius: 20px;
+      color: white;
+    }
+
+    .container h1 {
+      text-align: center;
+      color: chartreuse;
+    }
+
+    .form-group input {
+      display: block;
+      width: 90%;
+      margin: 10px auto;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 2px solid yellowgreen;
+      text-align: center;
+    }
+
+    .container button {
+      display: block;
+      width: 60%;
+      margin: 20px auto;
+    }
+
+    @media screen and (max-width: 600px) {
+      .left, .right {
+        position: static;
         justify-content: center;
-        gap: 30px;
+        margin: 10px 0;
+      }
+
+      .navbar {
+        flex-direction: column;
+      }
+
+      .navbar li {
+        margin: 5px 0;
+      }
+
+      .right {
+        flex-direction: row;
+        justify-content: center;
+      }
     }
+  </style>
+</head>
+<body>
 
-    nav a {
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
-    }
+  <header class="header">
+    <div class="left">
+      <img src="gim.jpg" alt="logo" />
+      <div class="name">SK Fitness</div>
+    </div>
 
-    .logo {
-        position: fixed;
-        top: 10px;
-        left: 10px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
+    <div class="mid">
+      <ul class="navbar">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">Fitness guru</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">About Us</a></li>
+      </ul>
+    </div>
 
-    .logo img {
-        height: 40px;
-    }
+    <div class="right">
+      <a href="tel:+916969696969"><button>Call</button></a>
+      <a href="mailto:Randomguy69@gmail.com"><button>Email</button></a>
+    </div>
+  </header>
 
-    .logo span {
-        color: lime;
-        font-weight: bold;
-        font-size: 18px;
-    }
-</style>
-
-</head><body>
-    <div class="logo">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Dumbbell_icon.png" alt="Logo">
-        <span>SK Fitness</span>
-    </div><nav>
-    <a href="#">Home</a>
-    <a href="#">Fitness Guru</a>
-    <a href="#">Contact Us</a>
-    <a href="#">About Us</a>
-</nav>
-
-<div class="container">
+  <div class="container">
     <h1>Join the Best GYM In Bajajnagar</h1>
-    <form action="https://formspree.io/f/xldbrnvg" method="POST">
-        <div class="form-group">
-            <input type="text" name="name" placeholder="Your Name" required>
-        </div>
-        <div class="form-group">
-            <input type="text" name="age" placeholder="Age" required>
-        </div>
-        <div class="form-group">
-            <input type="text" name="gender" placeholder="Gender" required>
-        </div>
-        <div class="form-group">
-            <input type="text" name="locality" placeholder="Locality" required>
-        </div>
-        <div class="form-group">
-            <input type="email" name="email" placeholder="Enter Your Email" required>
-        </div>
-        <div class="form-group">
-            <input type="text" name="number" placeholder="Enter Your Number" required>
-        </div>
-        <button class="btn" type="submit">Submit :)</button>
+    <form action="https://formspree.io/f/xldbrnvg" method="post">
+      <div class="form-group">
+        <input type="text" placeholder="Your Name" />
+      </div>
+      <div class="form-group">
+        <input type="text" placeholder="Age" />
+      </div>
+      <div class="form-group">
+        <input type="text" placeholder="Gender" />
+      </div>
+      <div class="form-group">
+        <input type="text" placeholder="Locality" />
+      </div>
+      <div class="form-group">
+        <input type="email" placeholder="Enter Your Email" />
+      </div>
+      <div class="form-group">
+        <input type="tel" placeholder="Enter Your Number" />
+      </div>
+      <button class="btn" type="submit">Submit :)</button>
     </form>
-</div>
+  </div>
 
-</body></html>
+</body>
+</html>
